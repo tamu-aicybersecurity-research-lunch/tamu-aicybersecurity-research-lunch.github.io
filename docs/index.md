@@ -1,7 +1,4 @@
-<!-- This is a comment to occupy the first heading -->
-# 
-
-## AI for Cybersecurity Research Lunch
+# AI for Cybersecurity Research Lunch
 
 ---
 
