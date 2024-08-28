@@ -22,7 +22,7 @@ layout: default
 
 # Upcoming Schedule
 
-{% assign sorted_events = site.schedule | sort: "date" | reverse | limit: 3 %}
+{% assign sorted_events = site.schedule | sort: "date" | reverse | limit: 10 %}
 
 {% for event in sorted_events %}
 <blockquote>
