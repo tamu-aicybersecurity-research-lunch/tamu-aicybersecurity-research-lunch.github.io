@@ -13,7 +13,7 @@ This page has all previews schedule AI for Cybersecurity Research Lunch.
 
 # History Schedule
 
-{% assign past_events = site.schedule | sort: "date" | reverse %} 
+{% assign past_events = site.schedule | sort: "date" %} 
 
 {% for event in past_events %}
 <blockquote class="schedule-post">
