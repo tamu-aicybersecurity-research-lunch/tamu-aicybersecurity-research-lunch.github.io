@@ -22,13 +22,14 @@ layout: default
 # Upcoming Schedule
 
 {% assign future_events = site.schedule | sort: "date" %}
-{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign today = "now" | date: "%Y-%m-%d" %}
 
 {% for event in future_events %}
-  {% if event.date >= today %}
+  {% assign event_date = event.date | date: "%Y-%m-%d" %}
+  {% if event_date >= today %}
     <blockquote>
       <h3><strong>{{ event.title }}</strong></h3>
-      <p><strong>Date:</strong> {{ event.date | date: "%m/%d/%Y" }}</p>
+      <p><strong>Date:</strong> {{ event.date | date: "%B %d, %Y" }}</p>
       <p><strong>Speakers:</strong> {{ event.speakers }}</p>
       <p><strong>Abstract:</strong></p>
       <p>{{ event.content | markdownify }}</p>
