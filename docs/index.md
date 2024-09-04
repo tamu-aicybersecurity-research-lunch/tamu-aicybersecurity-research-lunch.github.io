@@ -18,6 +18,8 @@ layout: default
 
 **Previous Meetings:**: [View All Past Events](/history.html)
 
+**Slides/Paper of Previous Meetings**: https://drive.google.com/drive/folders/1IkCrKH-DeS3wfGXEQIePN0a-tdWTI_0p?usp=sharing
+
 **🍔Ordering Food🍔:** Coming Soon
 
 # Upcoming Schedule
