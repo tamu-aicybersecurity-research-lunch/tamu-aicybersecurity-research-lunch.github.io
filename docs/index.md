@@ -39,8 +39,7 @@ layout: default
     <p><strong>Date:</strong> {{ event.date | date: "%m/%d/%Y" }}</p>
 
     <p><strong>Speakers:</strong> {{ event.speakers }}</p>
-
-    <p><strong>Abstract:</strong></p>
+    
     <p>{{ event.content | markdownify }}</p>
 </blockquote>
 <br>
