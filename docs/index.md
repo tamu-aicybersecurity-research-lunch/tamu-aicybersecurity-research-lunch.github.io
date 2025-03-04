@@ -25,11 +25,12 @@ layout: default
 # Upcoming Schedule
 
 {% assign sorted_events = site.schedule | sort: "date" %}
-{% assign today = "now" | date: "%Y-%m-%d" %}
+{% assign today_date = site.time | date: "%Y-%m-%d" %}
 
+<div id="upcoming-events">
 {% for event in sorted_events %}
     {% assign event_date = event.date | date: "%Y-%m-%d" %}
-    {% if event_date >= today %}
+    {% if event_date >= today_date %}
 <blockquote>
     <h3><strong>{{ event.title }}</strong></h3>
 
@@ -44,3 +45,17 @@ layout: default
 <br>
     {% endif %}
 {% endfor %}
+</div>
+
+<div id="no-events" style="display:none;">
+  <p>No upcoming events are currently scheduled. Please check back soon or join our mailing list to be notified of future events.</p>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const eventBlocks = document.querySelectorAll('#upcoming-events blockquote');
+    if (eventBlocks.length === 0) {
+      document.getElementById('no-events').style.display = 'block';
+    }
+  });
+</script>
