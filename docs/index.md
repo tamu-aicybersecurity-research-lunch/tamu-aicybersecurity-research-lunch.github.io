@@ -25,8 +25,11 @@ layout: default
 # Upcoming Schedule
 
 {% assign sorted_events = site.schedule | sort: "date" %}
+{% assign today = "now" | date: "%Y-%m-%d" %}
 
 {% for event in sorted_events %}
+    {% assign event_date = event.date | date: "%Y-%m-%d" %}
+    {% if event_date >= today %}
 <blockquote>
     <h3><strong>{{ event.title }}</strong></h3>
 
@@ -39,4 +42,5 @@ layout: default
 <br>
 <hr>
 <br>
+    {% endif %}
 {% endfor %}
