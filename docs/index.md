@@ -25,25 +25,21 @@ layout: default
 # Upcoming Schedule
 
 {% assign sorted_events = site.schedule | sort: "date" %}
-{% assign today_date = site.time | date: "%Y-%m-%d" %}
 
 <div id="upcoming-events">
 {% for event in sorted_events %}
-    {% assign event_date = event.date | date: "%Y-%m-%d" %}
-    {% if event_date >= today_date %}
-<blockquote>
+<blockquote class="event-block" data-event-date="{{ event.date | date: '%Y-%m-%d' }}">
     <h3><strong>{{ event.title }}</strong></h3>
 
     <p><strong>Date:</strong> {{ event.date | date: "%m/%d/%Y" }}</p>
 
     <p><strong>Speakers:</strong> {{ event.speakers }}</p>
-    
+
     <p>{{ event.content | markdownify }}</p>
 </blockquote>
 <br>
 <hr>
 <br>
-    {% endif %}
 {% endfor %}
 </div>
 
@@ -53,8 +49,25 @@ layout: default
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const eventBlocks = document.querySelectorAll('#upcoming-events blockquote');
-    if (eventBlocks.length === 0) {
+    const today = new Date();
+    const todayStr = today.getFullYear() + '-' +
+                    String(today.getMonth() + 1).padStart(2, '0') + '-' +
+                    String(today.getDate()).padStart(2, '0');
+
+    const eventBlocks = document.querySelectorAll('.event-block');
+    let visibleEvents = 0;
+
+    eventBlocks.forEach(function(block) {
+      const eventDate = block.getAttribute('data-event-date');
+      if (eventDate >= todayStr) {
+        block.style.display = 'block';
+        visibleEvents++;
+      } else {
+        block.style.display = 'none';
+      }
+    });
+
+    if (visibleEvents === 0) {
       document.getElementById('no-events').style.display = 'block';
     }
   });
