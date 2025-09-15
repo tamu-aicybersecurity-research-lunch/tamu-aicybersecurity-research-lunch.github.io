@@ -11,7 +11,7 @@ layout: default
 💡 The TAMU Cybersecurity Research Lunch is a weekly event on Tuesday where students and researchers present their latest work to peers. Talks are open to anybody, but regular attendees are expected to give a presentation on their work.
 </aside>
 
-**Format:** The lunch is held **every Tuesday** during Fall 2025 in **PETR 214 from 12:00 PM to 1:00 PM**. If you'd like to give a talk, please contact Ze Sheng with an abstract (zesheng@tamu.edu).
+**Format:** The lunch is held **every Tuesday** during Fall 2025 in **PETR 414 from 12:00 PM to 1:00 PM**. If you'd like to give a talk, please contact Ze Sheng with an abstract (zesheng@tamu.edu).
 
 
 **Mailing List:** [aicybersecurity-research-lunch@lists.tamu.edu](mailto:aicybersecurity-research-lunch@lists.tamu.edu)
