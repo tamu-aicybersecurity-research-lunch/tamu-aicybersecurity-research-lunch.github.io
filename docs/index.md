@@ -50,6 +50,7 @@ layout: default
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const today = new Date();
+    today.setDate(today.getDate() - 1); // Show events from yesterday onwards
     const todayStr = today.getFullYear() + '-' +
                     String(today.getMonth() + 1).padStart(2, '0') + '-' +
                     String(today.getDate()).padStart(2, '0');
@@ -59,7 +60,7 @@ layout: default
 
     eventBlocks.forEach(function(block) {
       const eventDate = block.getAttribute('data-event-date');
-      if (eventDate >= todayStr) {
+      if (eventDate > todayStr) {
         block.style.display = 'block';
         visibleEvents++;
       } else {
