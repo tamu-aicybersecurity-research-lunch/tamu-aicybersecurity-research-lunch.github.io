@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"docs\\_schedule\" /b /o:n)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
