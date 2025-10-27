@@ -28,7 +28,8 @@ layout: default
 
 <div id="upcoming-events">
 {% for event in sorted_events %}
-<blockquote class="event-block" data-event-date="{{ event.date | date: '%Y-%m-%d' }}">
+<div class="event-wrapper" data-event-date="{{ event.date | date: '%Y-%m-%d' }}">
+<blockquote class="event-block">
     <h3><strong>{{ event.title }}</strong></h3>
 
     <p><strong>Date:</strong> {{ event.date | date: "%m/%d/%Y" }}</p>
@@ -40,6 +41,7 @@ layout: default
 <br>
 <hr>
 <br>
+</div>
 {% endfor %}
 </div>
 
@@ -55,16 +57,16 @@ layout: default
                     String(today.getMonth() + 1).padStart(2, '0') + '-' +
                     String(today.getDate()).padStart(2, '0');
 
-    const eventBlocks = document.querySelectorAll('.event-block');
+    const eventWrappers = document.querySelectorAll('.event-wrapper');
     let visibleEvents = 0;
 
-    eventBlocks.forEach(function(block) {
-      const eventDate = block.getAttribute('data-event-date');
+    eventWrappers.forEach(function(wrapper) {
+      const eventDate = wrapper.getAttribute('data-event-date');
       if (eventDate > todayStr) {
-        block.style.display = 'block';
+        wrapper.style.display = 'block';
         visibleEvents++;
       } else {
-        block.style.display = 'none';
+        wrapper.style.display = 'none';
       }
     });
 
