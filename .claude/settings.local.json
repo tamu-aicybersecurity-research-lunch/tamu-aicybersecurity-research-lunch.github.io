@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir \"docs\\_schedule\" /b /o:n)"
+      "Bash(dir \"docs\\_schedule\" /b /o:n)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(dir:*)",
+      "Bash(cmd /c dir docs_schedule /b /o:n)"
     ],
     "deny": [],
     "ask": []
